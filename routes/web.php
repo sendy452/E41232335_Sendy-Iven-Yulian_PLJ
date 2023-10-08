@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Backend'], function () {
     Route::resource('dashboard', 'DashboardController');
+    Route::resource('pendidikan', 'PendidikanController');
+    Route::resource('pengalaman_kerja', 'PengalamanKerjaController');
 });
 
 Route::get('user', [ManagementUserController::class, 'index']);
