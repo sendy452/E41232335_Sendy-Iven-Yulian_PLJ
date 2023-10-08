@@ -53,7 +53,7 @@
                         <td>{{$item->tahun_keluar}}</td>
                         <td>
                             <div class="btn-group">
-                                <a class="btn btn-warning">
+                                <a class="btn btn-warning" href="{{route('pengalaman_kerja.edit', $item->id)}}">
                                     <i class="bi bi-pen"></i>
                                 </a>
                                 <button type="button" class="btn btn-danger">
