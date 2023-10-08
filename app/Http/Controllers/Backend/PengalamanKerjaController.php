@@ -8,12 +8,12 @@ use Illuminate\{Http\Request, Support\Facades\DB};
 class PengalamanKerjaController extends Controller
 {
     public function index(){
-        return view('backend.pengalaman_kerja.index');
+        $pengalaman_kerja = DB::table('pengalaman_kerja')->get();
+        return view('backend.pengalaman_kerja.index', compact('pengalaman_kerja'));
     }
 
     public function create(){
-        $pengalaman_kerja = null;
-        return view('backend.pengalaman_kerja.create', compact('pengalaman_kerja'));
+        return view('backend.pengalaman_kerja.create');
     }
 
     public function store(Request $request){
