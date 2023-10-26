@@ -45,7 +45,7 @@ class LoginController extends Controller
             'password' => 'required|string|min:6'
         ]);
 
-        $loginType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'password';
+        $loginType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $login = [
             $loginType => $request->username,
             'password' => $request->password
