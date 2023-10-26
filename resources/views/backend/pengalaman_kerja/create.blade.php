@@ -35,7 +35,7 @@
                         <form class="row g-3" id="pengalaman_kerja_form" method="post" action="{{isset($pengalaman_kerja) ?  route('pengalaman_kerja.update', $pengalaman_kerja->id) : route('pengalaman_kerja.store')}}">
                             {!! csrf_field() !!}
                             {!! isset($pengalaman_kerja) ? method_field('PUT'):'' !!}
-                            <input type="hidden" name="id" value="{{$pengalaman_kerja->id}}">
+                            <input type="hidden" name="id" value="{{@$pengalaman_kerja->id}}">
                             <div class="col-12">
                                 <label for="cname" class="form-label">Nama Perusahaan</label>
                                 <input type="text" class="form-control" id="nama" name="nama" minlength="5" value="{{ isset($pengalaman_kerja) ? $pengalaman_kerja->nama : '' }}" required />
@@ -48,7 +48,7 @@
                                 <label for="inputPassword4" class="form-label">Tahun Masuk</label>
                                 <select onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'  class="form-control" name="tahun_masuk">
                                     @for ($year = (int)date('Y'); 2000 <= $year; $year--)
-                                        <option value="<?=$year;?>" {{ $year == $pengalaman_kerja->tahun_masuk  ? 'selected' : ''}}><?=$year;?></option>
+                                        <option value="<?=$year;?>" {{ $year == @$pengalaman_kerja->tahun_masuk  ? 'selected' : ''}}><?=$year;?></option>
                                     @endfor
                                 </select>
                             </div>
@@ -56,7 +56,7 @@
                                 <label for="inputAddress" class="form-label">Tahun Selesai</label>
                                 <select onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'  class="form-control" name="tahun_keluar">
                                     @for ($year = (int)date('Y'); 2000 <= $year; $year--)
-                                        <option value="<?=$year;?>" {{ $year == $pengalaman_kerja->tahun_keluar  ? 'selected' : ''}}><?=$year;?></option>
+                                        <option value="<?=$year;?>" {{ $year == @$pengalaman_kerja->tahun_keluar  ? 'selected' : ''}}><?=$year;?></option>
                                     @endfor
                                 </select>            
                             </div>
